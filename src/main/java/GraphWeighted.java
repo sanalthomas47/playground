@@ -2,6 +2,12 @@ import java.util.*;
 import java.util.HashMap;
 import java.util.LinkedList;
 
+/**
+ * Undirected weighted graph with Dijkstra's shortest-path algorithm.
+ * Uses an adjacency-list map where each edge stores a destination vertex and an integer weight.
+ *
+ * @param <T> the vertex data type; must implement {@code equals} and {@code hashCode}
+ */
 public class GraphWeighted<T> {
 
     private class Vertex<T> {
@@ -62,10 +68,17 @@ public class GraphWeighted<T> {
 
     Map<Vertex<T>, LinkedList<Edge>> graphMap = new HashMap<>();
 
+    /** Adds an isolated vertex with value {@code v} if it does not already exist. */
     public void addVertex(T v) {
         graphMap.put(new Vertex<T>(v), new LinkedList<Edge>());
     }
 
+    /**
+     * Adds an undirected weighted edge between {@code source} and {@code destination}.
+     * Creates either vertex if it does not yet exist.
+     *
+     * @param weight non-negative edge cost
+     */
     public void addEdge(T source, T destination, int weight) {
 
         Vertex<T> sourceV = new Vertex<T>(source);
@@ -96,6 +109,10 @@ public class GraphWeighted<T> {
         }
     }
 
+    /**
+     * Removes the vertex with value {@code val} and all edges connected to it.
+     * Does nothing if the vertex does not exist.
+     */
     public void removeVertex(T val) {
 
         Vertex<T> tVertex = new Vertex<T>(val);
@@ -112,6 +129,12 @@ public class GraphWeighted<T> {
         }
     }
 
+    /**
+     * Runs Dijkstra's algorithm from the vertex with value {@code t} and prints
+     * the shortest distance from that source to every other vertex.
+     *
+     * @param t source vertex value
+     */
     public void shortestPath(T t){
 
         Vertex<T> source = new Vertex<>(t);

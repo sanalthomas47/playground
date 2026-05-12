@@ -1,3 +1,7 @@
+/**
+ * LIFO stack of {@code String} values backed by a singly linked list.
+ * Supports O(1) push and pop.
+ */
 public class Stack {
 
     private class Node{
@@ -24,6 +28,7 @@ public class Stack {
 
     }
 
+    /** Pushes {@code val} onto the top of the stack. */
     public void push(String val){
         if(head == null){
             head = new Node(val);
@@ -36,6 +41,7 @@ public class Stack {
         size++;
     }
 
+    /** Removes the top element. Does nothing if the stack is empty. */
     public void pop(){
         if(size == 0){
             return;

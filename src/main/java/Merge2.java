@@ -5,8 +5,19 @@ import org.junit.runner.notification.Failure;
 
 import static org.junit.Assert.*;
 
+/**
+ * Merges two sorted integer arrays into a new sorted array.
+ * Includes JUnit tests runnable via {@link #main}.
+ */
 public class Merge2 {
 
+    /**
+     * Returns a new sorted array containing all elements from both inputs.
+     *
+     * @param myArray     first sorted array (may be empty)
+     * @param alicesArray second sorted array (may be empty)
+     * @return merged sorted array of length {@code myArray.length + alicesArray.length}
+     */
     public static int[] mergeArrays(int[] myArray, int[] alicesArray) {
 
         int[] array = new int[myArray.length+alicesArray.length];

@@ -1,3 +1,7 @@
+/**
+ * FIFO queue of {@code String} values backed by a singly linked list.
+ * Supports O(1) enqueue and dequeue.
+ */
 public class Queue {
 
     private class Node{
@@ -21,6 +25,7 @@ public class Queue {
     Node tail = null;
     int size = 0;
 
+    /** Adds {@code val} to the tail of the queue. */
     public void enqueue(String val){
         if(head == null){
             head = tail = new Node(val);
@@ -33,6 +38,11 @@ public class Queue {
         size++;
     }
 
+    /**
+     * Removes and returns the value at the head of the queue.
+     *
+     * @return head value, or {@code null} if the queue is empty
+     */
     public String dequeue(){
         if(size == 0){
             return null;

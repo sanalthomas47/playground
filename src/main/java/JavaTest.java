@@ -1,5 +1,10 @@
 
 
+/**
+ * Simulation scratch class that models a car moving horizontally across a 2D screen buffer.
+ * The screen is represented as a 2D integer array (pixel color values).
+ * Runs an infinite loop — terminate the process to stop.
+ */
 public class JavaTest {
 
     private static final int WINDOW_WIDTH = 600;

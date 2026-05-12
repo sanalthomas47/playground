@@ -1,6 +1,10 @@
 import java.util.LinkedList;
 import java.util.Queue;
 
+/**
+ * Binary Search Tree (BST) supporting insertion and four traversal orders.
+ * Duplicate values are ignored. All traversals print to stdout.
+ */
 public class BinaryTree {
 
     private class Node {

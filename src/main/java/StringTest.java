@@ -1,5 +1,8 @@
 import java.util.LinkedHashMap;
 
+/**
+ * Scratch class for experimenting with {@link String#substring} and {@link java.util.LinkedHashMap}.
+ */
 public class StringTest {
 
     public static void main(String[] args) {

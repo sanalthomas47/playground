@@ -1,5 +1,17 @@
+/**
+ * Iterative binary search on a sorted integer array.
+ * Returns the index of the target element, or -1 if not found.
+ * Time complexity: O(log n). Space complexity: O(1).
+ */
 public class BinarySearch {
 
+    /**
+     * Searches for {@code target} in the sorted array {@code input}.
+     *
+     * @param input  sorted integer array
+     * @param target value to find
+     * @return index of {@code target}, or -1 if absent
+     */
     public int search(int[] input, int target){
 
         int left = 0;

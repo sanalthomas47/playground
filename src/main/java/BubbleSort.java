@@ -1,5 +1,9 @@
 import java.util.Arrays;
 
+/**
+ * In-place bubble sort implementation.
+ * Time complexity: O(n²). Space complexity: O(1).
+ */
 public class BubbleSort {
 
     public static void main (String... args){
@@ -13,6 +17,12 @@ public class BubbleSort {
         System.out.println(Arrays.toString(bubbleSort(array)));
     }
 
+    /**
+     * Sorts {@code array} in ascending order in place and returns it.
+     *
+     * @param array integer array to sort
+     * @return the same array, sorted
+     */
     public static int[] bubbleSort(int[] array){
 
         for(int i=0; i<array.length; i++){

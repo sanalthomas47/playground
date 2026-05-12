@@ -1,5 +1,18 @@
+/**
+ * In-place merge of two sorted arrays (LeetCode 88 style).
+ * {@code nums1} has extra trailing zeros to accommodate elements from {@code nums2}.
+ */
 public class Merge {
 
+    /**
+     * Merges {@code nums2} into {@code nums1} in sorted order in place.
+     * Elements beyond index {@code m-1} in {@code nums1} are treated as empty slots.
+     *
+     * @param nums1 first sorted array with length {@code m + n}
+     * @param m     number of valid elements in {@code nums1}
+     * @param nums2 second sorted array
+     * @param n     number of elements in {@code nums2}
+     */
     public void merge(int[] nums1, int m, int[] nums2, int n) {
 
         int counter = 0;

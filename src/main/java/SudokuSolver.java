@@ -1,5 +1,14 @@
+/**
+ * Backtracking Sudoku solver for standard 9×9 grids.
+ * Empty cells are represented by {@code 0}. Modifies the board in place.
+ */
 public class SudokuSolver {
 
+    /**
+     * Solves the given Sudoku puzzle in place starting from cell (0, 0).
+     *
+     * @param sudoku 9×9 board where 0 denotes an empty cell
+     */
     private void solveSudoku(int[][] sudoku){
 
         solveSudokuRecursively (sudoku, 0, 0);

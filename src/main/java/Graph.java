@@ -2,6 +2,12 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.LinkedList;
 
+/**
+ * Undirected, unweighted graph backed by an adjacency-list map.
+ * Vertices are automatically created when referenced in {@link #addEdge}.
+ *
+ * @param <T> the vertex data type; must implement {@code equals} and {@code hashCode}
+ */
 public class Graph<T> {
     private class Vertex<T> {
         T data;
@@ -18,10 +24,15 @@ public class Graph<T> {
         }
     }
     Map<Vertex<T>, LinkedList<Vertex<T>>> graphMap = new HashMap<Vertex<T>, LinkedList<Vertex<T>>>();
+    /** Adds an isolated vertex with value {@code v} if it does not already exist. */
     public void addVertex(T v){
         graphMap.put(new Vertex<T>(v), new LinkedList<Vertex<T>>());
     }
 
+    /**
+     * Adds an undirected edge between {@code source} and {@code destination},
+     * creating either vertex if it does not yet exist.
+     */
     public void addEdge(T source, T destination){
 
         Vertex<T> sourceV = new Vertex<T>(source);
@@ -51,6 +62,10 @@ public class Graph<T> {
         }
     }
 
+    /**
+     * Removes the vertex with value {@code val} and all edges connected to it.
+     * Does nothing if the vertex does not exist.
+     */
     public void removeVertex(T val){
 
         Vertex<T> tVertex = new Vertex<T>(val);

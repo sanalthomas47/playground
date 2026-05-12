@@ -1,6 +1,11 @@
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Least-Recently-Used (LRU) cache with O(1) average get and put.
+ * Backed by a {@link java.util.HashMap} for O(1) lookup and a doubly linked list
+ * to track access order. The least-recently-used entry is evicted when capacity is exceeded.
+ */
 public class LRUCache {
 
     class Node {
@@ -23,6 +28,12 @@ public class LRUCache {
         lru = new HashMap<Integer, Node>(capacity);
     }
 
+    /**
+     * Returns the value for {@code key} and promotes it to most-recently-used.
+     *
+     * @param key cache key
+     * @return cached value, or -1 if not present
+     */
     public int get(int key) {
         if(lru.containsKey(key)){
             Node nd = lru.get(key);
@@ -61,6 +72,13 @@ public class LRUCache {
         lru.put(key, nd);
     }
 
+    /**
+     * Inserts or updates the entry for {@code key} with {@code data}.
+     * Evicts the least-recently-used entry if the cache is at capacity.
+     *
+     * @param key  cache key
+     * @param data value to store
+     */
     public void put(int key, int data) {
 
         if(node == null){

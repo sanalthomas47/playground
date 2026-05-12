@@ -1,3 +1,7 @@
+/**
+ * Doubly linked list of {@code String} values with O(1) append and
+ * O(n) positional insert/remove. Supports both forward and reverse printing.
+ */
 public class DoublyLinkedList {
 
     private class Node{
@@ -25,6 +29,7 @@ public class DoublyLinkedList {
 
     }
 
+    /** Appends {@code val} to the tail of the list. */
     public void addElement(String val){
         if(head == null){
             head = tail = new Node(val);
@@ -38,6 +43,12 @@ public class DoublyLinkedList {
         size++;
     }
 
+    /**
+     * Removes the node at zero-based {@code pos}.
+     *
+     * @param pos position to remove (0 = head)
+     * @return empty string on success, or an error message if out of bounds
+     */
     public String remove(int pos){
         if(pos>size){
             return "element doesn't exist";
@@ -75,6 +86,13 @@ public class DoublyLinkedList {
     }
 
 
+    /**
+     * Inserts {@code val} before the node currently at zero-based {@code pos}.
+     * Does nothing if {@code pos} exceeds the list size.
+     *
+     * @param pos target position
+     * @param val value to insert
+     */
     public void addElementAtPosition(int pos, String val){
         if(pos > size){
             return;
